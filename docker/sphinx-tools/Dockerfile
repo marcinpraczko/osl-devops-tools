@@ -8,7 +8,8 @@ LABEL maintainer = "marcin.praczko@gmail.com"
 # Install Sphinx-Doc
 RUN pip install --upgrade pip \
   && pip install 'Sphinx                          == 1.7.1' \
-                 'sphinxcontrib-confluencebuilder == 0.8'
+                 'sphinxcontrib-confluencebuilder == 0.8' \
+                 'sphinxcontrib.datatemplates     == 0.1.0'
 
 # Install Nginx for accessing Sphinx-Doc
 RUN apt-get update -y \
