@@ -1,0 +1,8 @@
+---
+key1: issue002-1
+key2: issue002-2
+
+title-for-list: 'This is example for table002'
+nested-list:
+  - ['Issue002-1', 'Issue002-2']
+  - ['Issue002-3', 'Issue002-4']
