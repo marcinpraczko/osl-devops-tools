@@ -4,7 +4,7 @@
 
 function _osl_sphinx_tools() {
     local VERSION="v0.2.0"
-    docker run --rm -it \
+    sudo docker run --rm -it \
         --name=osl-sphinx-tools \
         --hostname="osl-sphinx-tools" \
         -v `pwd`:/code osl/sphinx-tools:"${VERSION}" /bin/bash

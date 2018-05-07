@@ -18,6 +18,13 @@ RUN apt-get update -y \
 # Install Graphviz package and sphinx-doc extension
 RUN apt-get install -y libgv-python graphviz
 
+# Install PlantUML
+# TODO: Move this to separate tasks outside docker and COPY
+#       This file is not often updated so should be downloaded as separate task
+WORKDIR /tools
+RUN apt-get install -y default-jre \
+    && wget -O plantuml.jar "http://sourceforge.net/projects/plantuml/files/plantuml.1.2018.3.jar/download"
+
 # Remove all cache and temporary files
 RUN apt-get autoremove -y \
   && rm -rf /var/cache/* \
