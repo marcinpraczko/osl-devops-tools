@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker run --rm -it \
-    --name=osl-sphinx-tools \
-    --hostname=osl-sphinx-tools \
-    -v `pwd`:/code osl/sphinx-tools:v0.2.0 /bin/bash
+set -e
+
+source osl_env/bash.sh
+_osl_sphinx_tools
