@@ -42,6 +42,7 @@ extensions = [
     'sphinxcontrib.datatemplates',
     'sphinx.ext.graphviz',
     'sphinxcontrib.plantuml',
+    'sphinx_tabs.tabs',
 ]
 
 
