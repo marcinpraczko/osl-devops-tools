@@ -1,0 +1,5 @@
+# Download Docker files from GitHub
+# RUN: wget -c -o download.log -i gh_direct_download.txt
+https://raw.githubusercontent.com/marcinpraczko/osl-devops-tools/master/docker/sphinx-tools/Dockerfile
+https://raw.githubusercontent.com/marcinpraczko/osl-devops-tools/master/docker/sphinx-tools/Makefile
+https://raw.githubusercontent.com/marcinpraczko/osl-devops-tools/master/docker/sphinx-tools/run_interactive.sh
