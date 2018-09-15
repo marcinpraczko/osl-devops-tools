@@ -2,6 +2,9 @@
 
 # Simple script for adding running this docker as function
 
+# TODO: Make this generated automatically
+OSL_SPHINX_TOOLS_VERSION="0.2.2"
+
 function _osl_sphinx_tools_init_build_docs() {
     local VERSION="latest"
     sudo docker run --rm -it \
@@ -11,7 +14,7 @@ function _osl_sphinx_tools_init_build_docs() {
 }
 
 function _osl_sphinx_tools() {
-    local VERSION="v0.2.1"
+    local VERSION="${OSL_SPHINX_TOOLS_VERSION}"
 
     # TODO: Confirm whether name matter or whether can be random
     #    local NEW_ID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 4 | head -n 1)
@@ -27,7 +30,7 @@ function _osl_sphinx_tools() {
 alias osl_run_sphinx_tools='_osl_sphinx_tools'
 
 function _osl_sphinx_tools_make_html() {
-    local VERSION="v0.2.1"
+    local VERSION="${OSL_SPHINX_TOOLS_VERSION}"
 
     sudo docker run --rm -it \
         --hostname="docker-osl-sphinx-tools" \

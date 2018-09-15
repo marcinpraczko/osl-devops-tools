@@ -2,3 +2,6 @@
 /.idea/
 build/
 
+# Software related with downloads 3rd party tools / scripts / etc
+download.log
+
