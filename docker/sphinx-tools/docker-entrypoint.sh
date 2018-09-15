@@ -16,7 +16,26 @@ function start_service_nginx() {
     fi
 }
 
+# Display welcome message when working in interactive mode
+function interactive_welcome_message() {
+    if [ -t 1 ]; then
+        cat << EOF
+
+Welcome in interactive mode for sphinx-tools docker containers.
+Build documentation can be automated based on detected changes in docs/source folder.
+
+To achieve this please run commands:
+
+  cd /code/docs/source
+  /tools/scripts/onchange.sh make -C .. html
+
+EOF
+    fi
+}
+
+
 # -- Main code --
 start_service_nginx
+interactive_welcome_message
 
 exec "$@"
