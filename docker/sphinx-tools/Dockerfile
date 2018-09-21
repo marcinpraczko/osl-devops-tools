@@ -15,14 +15,23 @@ RUN pip install --upgrade pip setuptools wheel \
 RUN apt-get update -y \
   && apt-get install -y nginx bsdmainutils
 
-# Install Graphviz package and sphinx-doc extension
-RUN apt-get install -y libgv-python graphviz
+# Install Software which is used by this docker
+# - Graphviz package and sphinx-doc extension
+# - inotify
+RUN apt-get install -y \
+    libgv-python \
+    graphviz \
+    inotify-tools
 
 # Remove all cache and temporary files
 RUN apt-get autoremove -y \
   && rm -rf /var/cache/* \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /root/.cache/
+
+# Copy scripts which are used in this project
+COPY tools/from_public_resources/scripts/onchange.sh /tools/scripts/
+RUN chmod 700 /tools/scripts/*.sh
 
 # Copy documentation from this project (This will be Build-in docs)
 WORKDIR /docs
