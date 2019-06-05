@@ -1,8 +1,8 @@
 # ============================================================================
-# 2018/03 by Marcin Praczko
+# 2019/06 by Marcin Praczko
 # ============================================================================
 
-FROM               python:2.7.14
+FROM               python:2.7.16
 LABEL maintainer = "marcin.praczko@gmail.com"
 
 # Install Sphinx-Doc
